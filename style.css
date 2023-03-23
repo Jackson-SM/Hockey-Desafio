@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  background:linear-gradient(rgba(49, 49, 49, 0.5), rgba(51, 51, 51, 0.5)), url('img/hockey/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+  background: rgb(240, 240, 240);
+  position: fixed;
+  width: 100%;
+}
+
+.navbar .menu {
+  display: flex;
+  font-weight: bold;
+  font-size: 14px;
+  height: 100%;
+}
+
+.navbar h1 {
+  color: rgb(177, 50, 77);
+  font-weight: bolder;
+  font-size: 25px;
+}
+
+.navbar .menu a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.navbar .menu a:hover{
+  transition: all ease-in 100ms;
+  color: rgb(168, 55, 61);
+}
+
+.navbar .menu a::before {
+  content: '';
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  top: 100%;
+  left: 0;
+
+  background-color: rgb(168, 55, 61);
+  
+  transition: all ease-in-out 200ms;
+
+  z-index: -1;
+  opacity: 0;
+}
+
+.navbar .menu a:hover::before {
+  top: 96%;
+  opacity: 1;
+}
+
+.navbar .menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(37, 37, 37);
+}
+
+label > #open,
+label > #close {
+  font-size: 23px;
+  color: rgb(53, 53, 53);
+  display: none;
+  float: right;
+  cursor: pointer;
+}
+
+label > #open {
+  color: white;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgb(138, 44, 64);
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 920px){
+  label > #open {
+    display: block;
+  }
+
+  .navbar .menu {
+    top: 80px;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 0;
+    text-align: center;
+  }
+
+  #check:checked ~ .menu{
+    height: 100%;
+    transition: height ease-in-out 300ms;
+  }
+  #check:checked ~ label #close {
+    display: block;
+  }
+  #check:checked ~ label #open {
+    display: none;
+  }
+  #check:not(:checked) ~ .menu {
+    height: 0;
+  }
+}
+
+#home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  color: white;
+  font-family: 'Karla', sans-serif;
+}
+
+#home h1,p,a {
+  margin-left: 40px;
+}
+
+#home h1 {
+  font-size: 50px;
+  width: 50%;
+  text-transform: uppercase;
+}
+
+#home p {
+  width: 50%;
+}
+
+#home a {
+  padding: 15px 60px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(138, 44, 64);
+  font-family: 'Karla', sans-serif;
+  text-transform: uppercase;
+  transition: all ease-in-out 150ms;
+}
+
+#home a:hover {
+  background-color: rgb(177, 80, 101);
+}
+
+@media (max-width: 920px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  #home h1,p,a {
+    margin-left: 0;
+  }
+  
+  #home h1 {
+    width: 80%;
+    font-size: 20px;
+  }
+}
+
+#aboutus {
+  background-color: white;
+  padding: 80px;
+  font-family: 'Oswald', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.title {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.671);
+}
+
+.title span {
+  color: rgb(138, 44, 64);
+}
+
+#aboutus .about {
+  display: flex;
+  gap: 4rem;
+  height: 100%;
+}
+
+#aboutus .about > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#aboutus .about > div span {
+  width: 80%;
+  padding: 10px 0px;
+  color: rgb(63, 63, 63);
+}
+
+#aboutus .about .aboutus-h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.329);
+}
+
+#aboutus .about h2 {
+  color: rgb(168, 53, 53);
+}
+#aboutus .about h2 span {
+  color: rgba(0, 0, 0, 0.671);
+}
+
+#aboutus .about .illustration {
+  width: 100%;
+  height: 500px;
+  background-position: center;
+}
+
+#aboutus .about .one {
+  background: url('img/illustration/aboutus/1.jpg');
+  background-size: cover;
+}
+#aboutus .about .two {
+  background: url('img/illustration/aboutus/2.jpg');
+  background-size: cover;
+}
+
+#aboutus .about > div a {
+  border: 1px solid rgb(138, 44, 64);
+  color: rgb(138, 44, 64);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px 40px;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  transition: all ease-in-out 200ms;
+  margin: 0;
+}
+
+#aboutus .about > div a:hover {
+  background:rgb(138, 44, 64);
+  color: white;
+  font-weight: normal;
+}
+
+#whatwedo > h1 {
+  text-align: center;
+  padding: 40px;
+}
+
+#whatwedo {
+  font-family: 'Oswald', sans-serif;
+}
+
+#whatwedo .content .client h1{
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+#whatwedo .content {
+  display: flex;
+  background: linear-gradient(to right, rgb(138, 44, 64), rgb(158, 65, 85));
+  color: white;
+  justify-content: center;
+  gap: 10rem;
+  padding: 30px;
+}
+
+#whatwedo .content hr {
+  border: none;
+  width: 2px;
+  background-color: white;
+}
+
+#whatwedo .content .client {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#whatwedo .content .client h1 {
+  text-transform: uppercase;
+  width: 40%;
+}
+
+#whatwedo .content .client .card{
+  padding: 20px 60px;
+  background: white;
+  color: rgb(138, 44, 64);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#whatwedo .content .client .card span:nth-child(1) {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#whatwedo .content .games {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#whatwedo .content .games div span:nth-child(1){
+  font-size: 25px;
+  border: 2px solid white;
+  width: 40px;
+  text-align: center;
+}
+
+#whatwedo .content .games div {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Karla', sans-serif;
+}
+
+#ourteam {
+  padding: 100px 0px;
+}
+
+#ourteam .cards{
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 10px;
+}
+
+#ourteam > h1{
+  text-align: center;
+  padding: 80px;
+}
+
+#ourteam .card-profile {
+  font-family: 'Lato', sans-serif;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 340px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.164);
+  position: relative;
+  overflow: hidden;
+}
+
+#ourteam .card-profile p {
+  position: absolute;
+  width: 80%;
+  color: rgb(230, 230, 230);
+  text-align: start;
+  padding: 0;
+  margin: 0;
+  display: none;
+  font-family: 'Karla', sans-serif;
+}
+
+#ourteam .card-profile:hover p {
+  display: block;
+}
+
+#ourteam .card-profile::before {
+  content: '';
+
+  background-color: rgba(150, 30, 50, 0.884);
+
+  width: 0;
+  height: 100%;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+#ourteam .card-profile:hover::before {
+  width: 100%;
+}
+
+
+#ourteam .card-profile .photo {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background-position: 66%;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+#ourteam .card-profile .tracy-terry {
+  background-image: url('img/profile/tracy-terry.jpg');
+}
+#ourteam .card-profile .kourtney-kardashian{
+  background-image: url('img/profile/Kourtney-kardashian.jpg');
+}
+#ourteam .card-profile .alan-nathan {
+  background-image: url('img/profile/Alan-Nathan.jpg');
+}
+
+#ourteam .card-profile .name {
+  color: rgba(0, 0, 0, 0.808);
+  font-size: 18px;
+}
+
+#ourteam .card-profile span {
+  color: rgba(0, 0, 0, 0.658);
+  margin-bottom: 20px;
+}
+
+#ourteam .card-profile .photo img {
+  width: 250px;
+}
+
+#ourteam .icons {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.664);
+}
+
+footer {
+  height: 50px;
+  background-color: rgb(165, 45, 61);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(204, 90, 105);
+}
+
+footer div span {
+  padding: 0 10px;
+}
+
+footer span a {
+  margin: 0;
+  padding: 0;
+}
